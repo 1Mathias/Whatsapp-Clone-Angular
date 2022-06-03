@@ -6,6 +6,15 @@
   #header {
     flex-basis: 67px;
     background-color: #eeeeee;
+    box-shadow:2px 0px 4px #ccc;
+    display: flex;
+    justify-content: space-between;
+    .avatarSection{
+      display: flex;
+      .picture{
+        min-width:60px;
+      }
+    }
   }
   #body {
     background-color: #e7dfdc;

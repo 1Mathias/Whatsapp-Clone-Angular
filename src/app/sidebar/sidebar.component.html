@@ -12,13 +12,14 @@
     </div>
     <div id="searchBox">
       <img width="20" src="../../assets/images/searchIcon.png" />
-      <input type="text" placeholder="Search or start the new Chat" />
+      <input type="text" [(ngModel)]="searchText" placeholder="Search or start the new Chat" />
     </div>
   </div>
   <div id="sidebarContent">
     <!-- <div id="noConversations">All chats are archieved</div> -->
-    
-    <div class="conversation" *ngFor="let conversation of conversations" (click)="conversationClicked.emit(conversation)">
+
+    <div class="conversation" *ngFor="let conversation of !searchText?conversations:filteredConversations"
+      (click)="conversationClicked.emit(conversation)">
       <div class="picture">
         <img src="../../assets/images/no-profile-picture.svg" />
       </div>
@@ -30,7 +31,8 @@
         <div class="message">
           <!-- <img src="../../assets/images/no-profile-picture.svg">
           <img src="../../assets/images/no-profile-picture.svg"> -->
-          {{ conversation.lastestMessage }}</div>
+          {{ conversation.lastestMessage }}
+        </div>
       </div>
     </div>
   </div>

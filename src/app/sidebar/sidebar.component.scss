@@ -117,11 +117,24 @@
         }
       }
       .message {
-        color: #717171;
+        color: #767676;
         padding-top: 10px;
         align-items: center;
         font-size: 13px;
         display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        .messageContent{
+          background-color: #fff;
+          border-radius: 5px;
+          padding: 10px;
+        }
+        &.me{
+          align-items: flex-end;
+          .messageContent{
+            background-color:#dcf7c5;
+          }
+        }
       }
     }
   }
