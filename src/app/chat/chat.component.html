@@ -1,0 +1,19 @@
+<div id="container">
+  <div id="header"></div>
+  <div id="body">
+    <div
+      class="message"
+      [ngClass]="{ me: message.me }"
+      *ngFor="let message of conversation.message"
+    >
+      {{ message.body }}
+    </div>
+  </div>
+  <div id="footer">
+    <div id="smileyIcon"></div>
+    <div id="textarea">
+      <textarea> </textarea>
+    </div>
+    <div id="micIcon"></div>
+  </div>
+</div>

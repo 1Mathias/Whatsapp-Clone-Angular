@@ -1,0 +1,37 @@
+<div id="sidebar">
+  <div id="row1">
+    <div id="sidebarHeader">
+      <div class="avatarContainer">
+        <img src="../../assets/images/no-profile-picture.svg" />
+      </div>
+      <div class="actionContainer">
+        <img src="../../assets/images/no-profile-picture.svg" />
+        <img src="../../assets/images/no-profile-picture.svg" />
+        <img src="../../assets/images/no-profile-picture.svg" />
+      </div>
+    </div>
+    <div id="searchBox">
+      <img width="20" src="../../assets/images/searchIcon.png" />
+      <input type="text" placeholder="Search or start the new Chat" />
+    </div>
+  </div>
+  <div id="sidebarContent">
+    <!-- <div id="noConversations">All chats are archieved</div> -->
+    
+    <div class="conversation" *ngFor="let conversation of conversations" (click)="conversationClicked.emit(conversation)">
+      <div class="picture">
+        <img src="../../assets/images/no-profile-picture.svg" />
+      </div>
+      <div class="content">
+        <div class="conversationHeader">
+          <div class="name">{{ conversation.name }}</div>
+          <div class="time">{{ conversation.time }}</div>
+        </div>
+        <div class="message">
+          <!-- <img src="../../assets/images/no-profile-picture.svg">
+          <img src="../../assets/images/no-profile-picture.svg"> -->
+          {{ conversation.lastestMessage }}</div>
+      </div>
+    </div>
+  </div>
+</div>

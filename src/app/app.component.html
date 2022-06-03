@@ -1,4 +1,15 @@
 <div id="background_header"></div>
 <div id="background_body"></div>
-<div id="chatContainer"></div>
+<div id="chatContainer">
+  <app-sidebar (conversationClicked)="onConversationSelected($event)"></app-sidebar>
+
+  <div id="chat">
+    <div id="chatPlaceholder" *ngIf="!conversation">
+      <img width="20" src="../assets/images/no-profile-picture.svg" />
+      <h2>whatsApp Connects your phone</h2>
+      <p>Check out your internet before proceeding to the next step</p>
+    </div>
+    <app-chat [conversation]="conversation" *ngIf="conversation"></app-chat>
+  </div>
+</div>
 <router-outlet></router-outlet>
